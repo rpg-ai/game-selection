@@ -1,5 +1,5 @@
 //const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbyLoPEIhYu95I8UVIeq2fHBnOg-vD96Lit_jDlSiw54FmTQuFdX5wE43XyzO7Ss229Z/exec';
-const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbyfV9DWqt0RA1UC2S_P-Sm9CnlQb1rZj_6R2vGEacuR1eyNHZQRLLdsVS5LvuukFYdmcQ/exec'
+const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbzsKj2srF9wXxkLUJYQxgb97CU4iHx54XiNevyzi8idVS6FG0E-2ADyBF_0g8LyVtzX/exec'
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
