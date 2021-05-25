@@ -4,5 +4,5 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
 function newGame(st) {
-    window.location.href = `${STABLE_VERSION}?/u=${urlParams.get('u')}&st=${st}`
+    window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}&st=${st}`
 }
