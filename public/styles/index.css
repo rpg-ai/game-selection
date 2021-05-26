@@ -13,7 +13,7 @@ button, a {
 }
 
 #superior-menu {
-    height: 100px;
+    height: 6.25rem;
     display: flex;
 }
 
@@ -30,32 +30,37 @@ button, a {
 
 body > #game-types {
     display: flex;
-    gap: 30px;
+    gap: 1.875rem;
     justify-content: center;
 }
 
 .game-type {
     background-image: linear-gradient(#00BFA5, #414153 80%);
-    height: 627px;
-    width: 568px;
-    border-radius: 5px;
+    max-height: 44.375rem;
+    height: 70vh;
+    min-height: 43.063rem;
+    width: 35.5rem;
+    border-radius: 0.313rem;
     color: #ECECEE;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.25rem;
 }
 
 .game-type .header-image {
-    min-height: 200px;
-    margin-bottom: 10px;
+    min-height: 12.5rem;
+    margin-bottom: 0.625rem;
 }
 
 .game-type .header-image img {
     width: 100%;
-    max-height: 293px;
+    max-height: 18.313rem;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .game-type .card-body {
-    padding: 20px;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
 }
@@ -66,31 +71,38 @@ body > #game-types {
 }
 
 .game-type .card-body p {
-    font: 1rem 'Open Sans';
-    width: 520px;
+    font: 1.2rem 'Open Sans';
+    width: 32.5rem;
+    max-height: 13.813rem;
+    overflow-y: hidden;
 }
 
 .game-type .play-button {
-    border-radius: 8px;
+    border-radius: 0.5rem;
     /*border: solid 4px #02DAB3;*/
     border: none;
 
     background-color: #4cc3c4;
     /*color: #ECECEE;*/
     color: #202020;
-    font: 700 24px 'Maven Pro';
+    font: 700 1.5rem 'Maven Pro';
 
-    width: 220px;
-    height: 45px;
+    width: 13.75rem;
+    height: 2.813rem;
 
-    align-self: center;
+    display: block;
+    margin: 0 auto;
 
     transition: width .3s, height .3s, background-color .3s, color .3s;
 }
 
 .game-type .play-button:hover {
-    width: 230px;
-    height: 50px;
+    width: 14.375rem;
+    height: 3.125rem;
     background-color: #63cdcd;
     color: #333333;
+}
+
+.game-type .play-button:focus {
+    outline: 0;
 }
