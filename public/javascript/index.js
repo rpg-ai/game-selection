@@ -1,7 +1,22 @@
-//const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbyLoPEIhYu95I8UVIeq2fHBnOg-vD96Lit_jDlSiw54FmTQuFdX5wE43XyzO7Ss229Z/exec';
-const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbzsKj2srF9wXxkLUJYQxgb97CU4iHx54XiNevyzi8idVS6FG0E-2ADyBF_0g8LyVtzX/exec'
+const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycby6r6Jue2ngJrHgvflhwNjZMNf7L4tnM7xCHVKdJPL3jdDoO1JitQoDBPiVRsU2_xl9HQ/exec'
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
+
+async function check_game() {
+    const userId = urlParams.get('u');
+    const request = await fetch(STABLE_VERSION, {
+        method: 'POST',
+        body: {
+            u: userId
+        }
+    }).then(response => {
+        if (response["hasGame"]) {
+            window.location.href = `${STABLE_VERSION}?u=${userId}`
+        }
+    });
+}
+
+check_game()
 
 function newGame(st) {
     window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}&st=${st}`
