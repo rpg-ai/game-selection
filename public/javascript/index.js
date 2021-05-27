@@ -6,6 +6,10 @@ async function check_game() {
     const userId = urlParams.get('u');
     const request = await fetch(STABLE_VERSION, {
         method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        },
         body: {
             u: userId
         }
