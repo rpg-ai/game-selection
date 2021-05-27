@@ -3,6 +3,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
 function check_game() {
+    let requestResponse = null;
     const params = {
         u: urlParams.get('u')
     }
@@ -16,7 +17,8 @@ function check_game() {
             body: JSON.stringify(params)
     }).then(
         response => {
-            console.log(response)
+            requestResponse = response;
+            console.log(response.json())
             if (response['hasGame']) {
                 window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
             }
