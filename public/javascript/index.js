@@ -6,7 +6,10 @@ function check_game() {
     fetch(`${STABLE_VERSION}?u=${urlParams.get('u')}`,
         {
             method: 'POST',
-            mode: 'no-cors'
+            headers: {
+                'content-type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
     }).then(
         response => {
             console.log(response)
