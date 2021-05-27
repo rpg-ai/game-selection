@@ -3,13 +3,17 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
 function check_game() {
-    fetch(`${STABLE_VERSION}?u=${urlParams.get('u')}`,
+    const params = {
+        u: urlParams.get('u')
+    }
+    fetch(`${STABLE_VERSION}`,
         {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
                 'content-type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
-            }
+            },
+            body: JSON.stringify(params)
     }).then(
         response => {
             console.log(response)
