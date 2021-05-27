@@ -4,14 +4,17 @@ const urlParams = new URLSearchParams(queryString)
 
 async function check_game() {
     const userId = urlParams.get('u');
+    console.log(userId)
     const request = await fetch(STABLE_VERSION, {
         method: 'POST',
         mode: 'no-cors',
-        body: {
+        parameters: {
             u: userId
         }
     }).then(response => {
+        console.log(response)
         if (response["hasGame"]) {
+            console.log('Entrei no hasGame')
             window.location.href = `${STABLE_VERSION}?u=${userId}`
         }
     });
