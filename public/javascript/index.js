@@ -2,11 +2,11 @@ const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbxYPo01qUwYPvt3K
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
-function check_game() {
+async function check_game() {
     const params = {
         u: urlParams.get('u')
     }
-    fetch(`${STABLE_VERSION}`,
+    await fetch(`${STABLE_VERSION}`,
         {
             method: 'POST',
             mode: 'no-cors',
