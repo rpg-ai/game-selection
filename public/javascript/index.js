@@ -8,8 +8,8 @@ function check_game() {
             method: 'POST',
             mode: 'no-cors'
     }).then(
-        request => {
-            if (request['hasGame']) {
+        response => {
+            if (response['hasGame']) {
                 window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
             }
         }
