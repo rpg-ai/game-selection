@@ -3,14 +3,18 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
 async function check_game() {
-    let request = await fetch(`${STABLE_VERSION}?u=${urlParams.get('u')}`)
+    let request = await fetch(`${STABLE_VERSION}?u=${urlParams.get('u')}`,
+        {
+            method: 'POST',
+            mode: 'no-cors'
+        });
 
     if (request['hasGame']) {
         window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
     }
 }
 
-check_game()
+check_game();
 
 function newGame(st) {
     window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}&st=${st}`
