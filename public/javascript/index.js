@@ -3,10 +3,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
 async function check_game() {
-    const params = {
-        u: urlParams.get('u')
-    }
-    await fetch(`${STABLE_VERSION}?u=1ade`, {method: 'POST'})
+    await fetch(`${STABLE_VERSION}?u=${urlParams.get('u')}`, {method: 'POST'})
         .then(response => response.json())
         .then(response => {
             console.log(response)
