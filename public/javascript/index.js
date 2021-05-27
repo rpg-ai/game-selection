@@ -1,4 +1,4 @@
-const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycby6r6Jue2ngJrHgvflhwNjZMNf7L4tnM7xCHVKdJPL3jdDoO1JitQoDBPiVRsU2_xl9HQ/exec'
+const STABLE_VERSION = 'https://script.google.com/macros/s/AKfycbxYPo01qUwYPvt3KFljmqDWTiEovuhToaHWcu7ilo1YGpS4dc7N2XU9H5IseQAbpD64Sg/exec'
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
