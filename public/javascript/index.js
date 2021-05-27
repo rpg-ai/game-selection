@@ -9,6 +9,7 @@ async function check_game() {
     await fetch(`${STABLE_VERSION}?u=1ade`, {method: 'POST'})
         .then(response => response.json())
         .then(response => {
+            console.log(response)
             if (response['hasGame']) {
                 window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
             }
