@@ -9,6 +9,7 @@ function check_game() {
             mode: 'no-cors'
     }).then(
         response => {
+            console.log(response)
             if (response['hasGame']) {
                 window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
             }
