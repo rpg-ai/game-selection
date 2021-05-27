@@ -12,7 +12,6 @@ async function check_game() {
         body: JSON.stringify( params )
     };
     const request = await fetch(STABLE_VERSION, options)
-        .then( response => response.json() )
         .then(response => {
             console.log(response)
             if (response["hasGame"]) {
