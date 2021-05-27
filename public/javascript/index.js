@@ -6,27 +6,16 @@ async function check_game() {
     const params = {
         u: urlParams.get('u')
     }
-    await fetch(`${STABLE_VERSION}`,
-        {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(params)
-    }).then(
-        response => {
-            // console.log(response.json())
+    await fetch(`${STABLE_VERSION}?u=1ade`, {method: 'POST'})
+        .then(response => response.json())
+        .then(response => {
             if (response['hasGame']) {
                 window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
             }
-
-            return response
-        }
-    );
+        })
 }
 
-let requestResponse = check_game();
+check_game();
 
 function newGame(st) {
     window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}&st=${st}`
