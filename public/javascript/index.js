@@ -6,7 +6,7 @@ function check_game() {
     const params = {
         u: urlParams.get('u')
     }
-    return fetch(`${STABLE_VERSION}`,
+    fetch(`${STABLE_VERSION}`,
         {
             method: 'POST',
             mode: 'no-cors',
@@ -16,10 +16,12 @@ function check_game() {
             body: JSON.stringify(params)
     }).then(
         response => {
-            console.log(response.json())
+            // console.log(response.json())
             if (response['hasGame']) {
                 window.location.href = `${STABLE_VERSION}?u=${urlParams.get('u')}`
             }
+
+            return response
         }
     );
 }
