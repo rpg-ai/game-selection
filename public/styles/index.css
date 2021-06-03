@@ -73,6 +73,7 @@ body > #game-types {
 .game-type .card-body p {
     font: 1.2rem 'Open Sans';
     width: 32.5rem;
+    height: 25rem;
     max-height: 13.813rem;
     overflow-y: hidden;
 }
